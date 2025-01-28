@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Scientist</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <form onsubmit="research()" class="search-form">
+        <form onsubmit="research(); return false" class="search-form">
             <h1>DeepScientist</h1>
+            <div id="data"></div>
             <input type="text" name="query" id="textbox" placeholder="Enter a topic to research">
             <input type="submit" value="Research" id="search-btn">
         </form>
 
     </div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
