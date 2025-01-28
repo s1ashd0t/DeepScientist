@@ -1,0 +1,3 @@
+function research(){
+    alert("Researching...");
+}

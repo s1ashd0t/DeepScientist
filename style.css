@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#textbox{
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    outline: none;
+    margin: 20px;
+    text-align: center;
+}
+
+#search-btn{
+    padding: 10px 20px;
+    font-size: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#search-btn:hover{
+    background-color: #fff;
+    color: #000;
+}
