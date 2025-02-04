@@ -2,13 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
+    background-color: transparent;
     color: #fff;
 }
 
-body{
+body {
+    margin: 0;
     overflow: hidden;
+    background: transparent;
+}
+canvas {
+    /* display: block; */
+    z-index: -1;
+    position: absolute;
+    pointer-events: none;
 }
 
 .container{
@@ -17,9 +24,11 @@ body{
     align-items: center;
     text-align: center;
     height: 100vh;
+    z-index: 1;
 }
 
 h1{
+    font-family: monospace;
     font-size: 50px;
     margin-bottom: 20px;
 }
@@ -27,6 +36,7 @@ h1{
 #textbox{
     width: 90%;
     padding: 10px;
+    font-family:'Courier New', Courier, monospace;
     font-size: 20px;
     border: 2px solid #fff;
     border-radius: 5px;
@@ -48,3 +58,38 @@ h1{
     background-color: #fff;
     color: #000;
 }
+
+#search-btn:active{
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+
+#textbox:focus::placeholder {
+    color: transparent; /* Hide the placeholder text */
+}
+
+#data{
+    width: 90%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: none;
+    margin: 20px;
+    text-align: center;
+}
+
+.loader {
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+    z-index: -10;
+  }
+  
+  .content {
+    padding: 20px;
+  }

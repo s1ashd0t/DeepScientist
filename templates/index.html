@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div class="loader">🔄 Release to refresh</div>
+    <canvas id="canvas"></canvas>
     <div class="container">
         <form onsubmit="research(); return false" class="search-form">
             <h1>DeepScientist</h1>
-            <div id="data"></div>
+            <p>A DeepSeek powered reasoning assistant</p>
             <input type="text" name="query" id="textbox" placeholder="Enter a topic to research">
             <input type="submit" value="Research" id="search-btn">
+            <div id="data"></div>
         </form>
-
     </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/pullrefresh.js') }}"></script>
+
 </body>
 </html>
