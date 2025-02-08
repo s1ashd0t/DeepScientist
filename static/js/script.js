@@ -11,7 +11,7 @@ function research(){
     })
         .then(response => response.json())
         .then(data => {
-            document.getElementById('data').innerHTML = JSON.stringify(data.value);
+            document.getElementById('data').innerHTML = key + " is " + data.value;
         });
 }
 
