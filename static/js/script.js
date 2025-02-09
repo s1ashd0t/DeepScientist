@@ -11,7 +11,14 @@ function research(){
     })
         .then(response => response.json())
         .then(data => {
-            document.getElementById('data').innerHTML = key + " is " + data.value;
+            document.getElementById('data').innerHTML = key + " is a " + data.value + "number";
+            document.getElementById('timer').innerHTML = data.timer;
+            if (data.value == "prime"){
+                createNotification(key, true);
+            }else{
+                createNotification(key, false);
+            }
+
         });
 }
 
@@ -36,8 +43,8 @@ class Particle {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 3 - 1.5;
-        this.speedY = Math.random() * 3 - 1.5;
+        this.speedX = Math.random() * 4 - 1.5;
+        this.speedY = Math.random() * 4 - 1.5;
         this.color = `hsl(${Math.random() * 360}, 50%, 50%)`;
     }
 
@@ -49,7 +56,7 @@ class Particle {
         const maxDistance = 100;
 
         if (distance < maxDistance) {
-            const force = (maxDistance - distance) / maxDistance;
+            const force = -1 * (maxDistance - distance) / maxDistance;
             const directionX = dx / distance;
             const directionY = dy / distance;
             this.speedX += directionX * force * 0.5;
@@ -61,12 +68,12 @@ class Particle {
         this.y += this.speedY;
 
         // Bounce off walls
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        if (this.x < 20 || this.x > canvas.width - 40) this.speedX *= -1;
+        if (this.y < 20 || this.y > canvas.height - 40) this.speedY *= -1;
 
         // Friction
-        this.speedX *= 0.99;
-        this.speedY *= 0.99;
+        this.speedX *= 0.995;
+        this.speedY *= 0.995;
     }
 
     draw() {
@@ -117,7 +124,7 @@ function animate() {
 
 animate();
 
-// Color change over time
+// random Color change over time
 let hue = 0;
 setInterval(() => {
     hue = (hue + 1) % 360;

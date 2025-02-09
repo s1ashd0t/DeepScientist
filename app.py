@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import math
+import time
 
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ def get_data():
         data = request.get_json()
         value = int(data['value'])
         result = None
-        
+        start_time = time.time()
         # Edge cases
         if value == 1:
             result = 'neither'
@@ -28,9 +29,12 @@ def get_data():
                 if value % i == 0:
                     result = 'composite'
                     break
-                
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+
         print(value, result)
-        return jsonify({'value': result})
+        print(elapsed_time)
+        return jsonify({'value': result, 'time': elapsed_time})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
