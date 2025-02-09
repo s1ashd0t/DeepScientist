@@ -8,8 +8,8 @@
 
 body {
     margin: 0;
-    overflow: hidden;
-    background: transparent;
+    /* overflow: hidden; */
+    background: black;
 }
 canvas {
     /* display: block; */
@@ -93,3 +93,20 @@ h1{
   .content {
     padding: 20px;
   }
+
+.hidden {
+    display: none;
+    
+}
+
+#spinner{
+    width: 50px;
+    height: 50px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
