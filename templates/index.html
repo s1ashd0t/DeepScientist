@@ -7,6 +7,8 @@
     <title>Research Scientist</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 </head>
 <body>
     <div class="loader">🔄 Release to refresh</div>
@@ -15,17 +17,17 @@
         <form onsubmit="research(); return false" class="search-form">
             <h1>DeepScientist</h1>
             <p>A DeepSeek powered reasoning assistant</p>
-            <input type="text" name="query" id="textbox" placeholder="Enter a topic to research" autofocus = "true" required>
+            <textarea  name="query" id="textbox" placeholder="Enter a topic to research" autofocus = "true" required></textarea>
             <div class="search">
-                <input type="submit" value="Research" id="search-btn">
+                <input type="submit" value="Think" id="search-btn">
                 <img src="../static/icons/infinite-spinner.svg" alt="" id="spinner" class="hidden">
             </div>
-            <div id="timer"></div>
             <div id="data"></div>
+            <div id="timer"></div>
         </form>
     </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/pullrefresh.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/pullrefresh.js') }}"></script> -->
     <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
 
 </body>
