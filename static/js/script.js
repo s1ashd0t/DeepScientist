@@ -11,14 +11,10 @@ function research(){
     })
         .then(response => response.json())
         .then(data => {
-            document.getElementById('data').innerHTML = key + " is a " + data.value + "number";
-            document.getElementById('timer').innerHTML = data.timer;
-            if (data.value == "prime"){
-                createNotification(key, true);
-            }else{
-                createNotification(key, false);
-            }
-
+            console.log(data)
+            const markpass = marked.parse(data.value)
+            console.log(markpass)
+            document.getElementById('data').innerHTML = markpass;
         });
 }
 
