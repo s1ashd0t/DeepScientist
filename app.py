@@ -7,7 +7,7 @@ import os
 
 load_dotenv()
 
-api_key_r1 = os.getenv('$API_KEY')
+api_key_r1 = os.getenv('API_KEY')
 
 app = Flask(__name__)
 
